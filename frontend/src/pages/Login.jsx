@@ -1,4 +1,3 @@
-// Login.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useFlashCard } from "../components/FlashCardProvider"; 
@@ -23,9 +22,9 @@ const Login = () => {
 
             localStorage.setItem("token", data.token);
             showFlashCard("Login successful!", "success");
-            console.log(data.token);
+            // console.log(data.token);
             navigate("/dashboard");
-            window.location.reload();
+            // window.location.reload();
         } catch (err) {
             setError(err.message);
             showFlashCard(err.message, "error"); 
