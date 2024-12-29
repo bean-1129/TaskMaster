@@ -53,12 +53,11 @@ const Dashboard = () => {
 
     if (!stats) return <div>Loading...</div>;
 
-    // Safeguards for stats
     const totalTasks = stats.totalTasks || 0;
-    const completedTasksPercentage = stats.completedPercentage ?? 0; // Default to 0 if undefined
-    const pendingTasksPercentage = stats.pendingPercentage ?? 0; // Default to 0 if undefined
-    const averageActualTime = stats.averageActualTime ?? 0; // Default to 0 if undefined
-    const timeLapsedAndBalance = stats.timeLapsedAndBalance?.priority || {}; // Default to empty object
+    const completedTasksPercentage = stats.completedPercentage ?? 0; 
+    const pendingTasksPercentage = stats.pendingPercentage ?? 0; 
+    const averageActualTime = stats.averageActualTime ?? 0; 
+    const timeLapsedAndBalance = stats.timeLapsedAndBalance?.priority || {}; 
 
     return (
         <div className="space-y-6">
