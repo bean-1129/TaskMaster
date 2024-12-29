@@ -21,7 +21,7 @@ const CreateTask = () => {
 
         try {
             const token = localStorage.getItem("token");
-            const response = await fetch("http://localhost:5000/api/tasks", {
+            const response = await fetch("https://taskmaster-bb5b.onrender.com/api/tasks", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

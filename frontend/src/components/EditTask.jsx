@@ -7,14 +7,14 @@ const EditTask = () => {
     const [startTime, setStartTime] = useState("");
     const [endTime, setEndTime] = useState("");
     const [status, setStatus] = useState("pending");
-    const { id } = useParams(); // Ensure the task ID is being passed here
+    const { id } = useParams(); 
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchTask = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+                const response = await fetch(`https://taskmaster-bb5b.onrender.com/api/tasks/${id}`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -28,7 +28,6 @@ const EditTask = () => {
                 setPriority(task.priority);
                 setStatus(task.status);
 
-                // Convert ISO date string to the required format
                 const formatDate = (isoDate) => {
                     const date = new Date(isoDate);
                     const yyyy = date.getFullYear();
@@ -47,8 +46,8 @@ const EditTask = () => {
         };
 
         fetchTask();
-    }, [id]); // Fetch the task when the component loads
-
+    }, [id]); 
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         const updatedTask = {
@@ -61,7 +60,7 @@ const EditTask = () => {
 
         try {
             const token = localStorage.getItem("token");
-            const response = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+            const response = await fetch(`https://taskmaster-bb5b.onrender.com/api/tasks/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

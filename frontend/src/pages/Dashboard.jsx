@@ -9,7 +9,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/auth/profile", {
+                const response = await fetch("https://taskmaster-bb5b.onrender.com/api/auth/profile", {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     },
@@ -30,7 +30,7 @@ const Dashboard = () => {
 
         const fetchStats = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/dashboard/stats", {
+                const response = await fetch("https://taskmaster-bb5b.onrender.com/api/dashboard/stats", {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     },

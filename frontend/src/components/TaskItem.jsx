@@ -27,7 +27,7 @@ const TaskItem = () => {
                     return;
                 }
 
-                const response = await fetch(`http://localhost:5000/api/tasks?page=${currentPage}&limit=${tasksPerPage}`, {
+                const response = await fetch(`https://taskmaster-bb5b.onrender.com/api/tasks?page=${currentPage}&limit=${tasksPerPage}`, {
                     headers: {
                         "Authorization": `Bearer ${token}`,
                     },

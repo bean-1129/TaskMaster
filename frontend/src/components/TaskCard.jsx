@@ -5,7 +5,7 @@ const TaskCard = ({ task, serialNumber }) => {
     const navigate = useNavigate();
 
     const handleDelete = async () => {
-        const response = await fetch(`http://localhost:5000/api/tasks/${task._id}`, {
+        const response = await fetch(`https://taskmaster-bb5b.onrender.com/api/tasks/${task._id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("token")}`,
