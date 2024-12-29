@@ -23,7 +23,7 @@ const Login = () => {
             localStorage.setItem("token", data.token);
             showFlashCard("Login successful!", "success");
             // console.log(data.token);
-            navigate("/dashboard");
+            navigate("/");
             // window.location.reload();
         } catch (err) {
             setError(err.message);

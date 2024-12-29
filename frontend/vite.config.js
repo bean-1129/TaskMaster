@@ -12,18 +12,18 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // Alias "@" to the "src" directory
+      "@": path.resolve(__dirname, "src"), 
     },
   },
   build: {
-    outDir: "dist", // Build output directory
+    outDir: "dist", 
     rollupOptions: {
       output: {
-        manualChunks: undefined, // Optional: to bundle all JS into a single file
+        manualChunks: undefined, 
       },
     },
   },
   server: {
-    port: 3000, // Default development server port
+    port: 3000, 
   },
 });
