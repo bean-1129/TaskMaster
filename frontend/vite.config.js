@@ -1,17 +1,29 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "tailwindcss";
+import path from "path";
 
 export default defineConfig({
-    plugins: [react()],
-    build: {
-        outDir: "dist", // Ensure this matches your deployment setup
+  plugins: [react()],
+  css: {
+    postcss: {
+      plugins: [tailwindcss()],
     },
-    server: {
-        port: 3000,
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"), // Alias "@" to the "src" directory
     },
-    resolve: {
-        alias: {
-            "@": "/src",
-        },
+  },
+  build: {
+    outDir: "dist", // Build output directory
+    rollupOptions: {
+      output: {
+        manualChunks: undefined, // Optional: to bundle all JS into a single file
+      },
     },
+  },
+  server: {
+    port: 3000, // Default development server port
+  },
 });
