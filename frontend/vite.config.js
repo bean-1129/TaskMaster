@@ -1,21 +1,19 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "tailwindcss";
-import path from "path";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from 'tailwindcss'
 
 export default defineConfig({
-  root: path.resolve(__dirname, "frontend"), 
   plugins: [react()],
+  root: './frontend', // This tells Vite where the root directory is
+  build: {
+    outDir: './dist', // Make sure to specify the correct build output directory
+    rollupOptions: {
+      input: './frontend/index.html', // Ensure this points to the correct entry point
+    },
+  },
   css: {
     postcss: {
       plugins: [tailwindcss()],
     },
   },
-  build: {
-    outDir: path.resolve(__dirname, "dist"), 
-    emptyOutDir: true,
-  },
-  server: {
-    port: 3000,
-  },
-});
+})
