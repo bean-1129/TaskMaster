@@ -4,20 +4,15 @@ import tailwindcss from "tailwindcss";
 import path from "path";
 
 export default defineConfig({
-  root: "frontend",
+  root: path.resolve(__dirname, "frontend"), 
   plugins: [react()],
   css: {
     postcss: {
       plugins: [tailwindcss()],
     },
   },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "frontend/src"),
-    },
-  },
   build: {
-    outDir: "../dist",
+    outDir: path.resolve(__dirname, "dist"), 
     emptyOutDir: true,
   },
   server: {
