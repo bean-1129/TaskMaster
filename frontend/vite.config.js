@@ -4,6 +4,7 @@ import tailwindcss from "tailwindcss";
 import path from "path";
 
 export default defineConfig({
+  root: "frontend",
   plugins: [react()],
   css: {
     postcss: {
@@ -12,16 +13,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), 
+      "@": path.resolve(__dirname, "frontend/src"),
     },
   },
   build: {
-    outDir: "dist", 
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      },
-    },
+    outDir: "../dist",
+    emptyOutDir: true,
   },
   server: {
     port: 3000,
