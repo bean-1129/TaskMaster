@@ -24,7 +24,7 @@ const Login = () => {
             showFlashCard("Login successful!", "success");
             // console.log(data.token);
             navigate("/");
-            // window.location.reload();
+            window.location.reload();
         } catch (err) {
             setError(err.message);
             showFlashCard(err.message, "error"); 
