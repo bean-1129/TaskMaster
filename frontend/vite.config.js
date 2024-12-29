@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
-  root: './frontend',  // Set root to the frontend directory
+  root: './frontend',  
   plugins: [react()],
   css: {
     postcss: {
@@ -11,11 +11,12 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../dist',  // Set output directory for build files
+    outDir: './frontend/dist',  
+    emptyOutDir: true,          
   },
   server: {
     proxy: {
-      '/api': 'http://localhost:5000',  // Adjust based on your API
+      '/api': 'https://taskmaster-bb5b.onrender.com',  
     },
   },
 });
